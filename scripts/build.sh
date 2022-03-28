@@ -24,5 +24,5 @@ if [[ "$DO_BUILD" == "yes" ]]; then
     zip -qur builds/cloudcasts.zip public
 
     # Upload artifact to s3
-    aws s3 cp builds/cloudcasts.zip s3://cloudcasts-artifacts/$CODEBUILD_RESOLVED_SOURCE_VERSION.zip
+    aws s3 cp builds/cloudcasts.zip s3://joe-artifacts/$CODEBUILD_RESOLVED_SOURCE_VERSION.zip
 fi
