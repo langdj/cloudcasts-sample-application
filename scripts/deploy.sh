@@ -16,12 +16,12 @@ if [[ "$DEPLOY_ENV" != "nah" ]]; then
         --application-name cloudcasts-$DEPLOY_ENV-deploy-app \
         --deployment-group-name "cloudcasts-$DEPLOY_ENV-queue-deploy-group" \
         --description "Deploying trigger $CODEBUILD_WEBHOOK_TRIGGER" \
-        --s3-location "bucket=cloudcasts-artifacts,bundleType=zip,key=$CODEBUILD_RESOLVED_SOURCE_VERSION.zip"
+        --s3-location "bucket=joe-artifacts,bundleType=zip,key=$CODEBUILD_RESOLVED_SOURCE_VERSION.zip"
 
     # Deploy web servers
     aws --region us-east-2 deploy create-deployment \
         --application-name cloudcasts-$DEPLOY_ENV-deploy-app \
         --deployment-group-name "cloudcasts-$DEPLOY_ENV-http-deploy-group" \
         --description "Deploying trigger $CODEBUILD_WEBHOOK_TRIGGER" \
-        --s3-location "bucket=cloudcasts-artifacts,bundleType=zip,key=$CODEBUILD_RESOLVED_SOURCE_VERSION.zip"
+        --s3-location "bucket=joe-artifacts,bundleType=zip,key=$CODEBUILD_RESOLVED_SOURCE_VERSION.zip"
 fi
